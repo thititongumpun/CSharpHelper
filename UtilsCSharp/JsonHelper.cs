@@ -1,10 +1,13 @@
+using System;
+using Newtonsoft.Json;
+
 namespace UtilsCSharp
 {
     public static class JsonHelper
     {
-        public static string JsonResult(Object object)
+        public static string JsonResult(Object obj)
         {
-            return JsonConvert.SerializeObject(object, Formatting.Indented);
+            return JsonConvert.SerializeObject(obj, Formatting.Indented);
         }
     }
 }
