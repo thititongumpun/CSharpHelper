@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using UtilsCSharp.Generic;
 
 namespace UtilsCSharp
 {
@@ -17,7 +18,9 @@ namespace UtilsCSharp
 
             Console.WriteLine(person.GetFullName());
 
-            // System.Console.WriteLine(StingHelper.ConvertToString(person));
+            int result = ExampleGeneric.Larger<int>(3, 5);
+
+            Console.WriteLine(result);
         }
     }
 }
