@@ -21,7 +21,7 @@ namespace SendEmailCSharp
 
         static async Task Execute()
         {
-            var apiKey = "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";
+            var apiKey = "apikey";
             var client = new SendGridClient(apiKey);
             var from = new EmailAddress("thiti180536@gmail.com", "Not");
             var to = new EmailAddress("thiti@dosetech.co", "Not");
