@@ -23,38 +23,41 @@ namespace DemoWebAPI.Controllers
         }
 
 
-        [HttpGet("cache/{key}")]
-        public async Task<IActionResult> GetCacheValueDI([FromRoute] string key)
-        {
-            var value = await _cacheService.GetCacheValue(key);
-            return string.IsNullOrEmpty(value) ? NotFound() : Ok(value);
-        }
-
-        [HttpPost("cache")]
-        public async Task<IActionResult> SetCacheValueDI([FromBody] NewCacheRequest request)
-        {
-            var response = new BaseResponse<NewCacheRequest>();
-            await _cacheService.SetCacheValue(request.Key, request.Value, null);
-            response.Success = true;
-            response.Data = request;
-            return Ok(response);
-        }
-
         //[HttpGet("cache/{key}")]
-        //public async Task<IActionResult> GetCacheValueExtensions([FromRoute] string key)
+        //public async Task<IActionResult> GetCacheValueDI([FromRoute] string key)
         //{
-        //    var value = await _cache.GetCacheAsync<CacheResponse>(key);
-        //    return Ok(value);
+        //    var value = await _cacheService.GetCacheValue(key);
+        //    return string.IsNullOrEmpty(value) ? NotFound() : Ok(value);
         //}
 
         //[HttpPost("cache")]
-        //public async Task<IActionResult> SetCacheValueExtensions([FromBody] NewCacheRequest request)
+        //public async Task<IActionResult> SetCacheValueDI([FromBody] NewCacheRequest request)
         //{
         //    var response = new BaseResponse<NewCacheRequest>();
-        //    await _cache.SetCacheAsync("eiei", request);
+        //    await _cacheService.SetCacheValue(request.Key, request.Value, null);
         //    response.Success = true;
         //    response.Data = request;
         //    return Ok(response);
         //}
+
+        [HttpGet("cache/{key}")]
+        public async Task<IActionResult> GetCacheValueExtensions([FromRoute] string key)
+        {
+            var response = new BaseResponse<NewCacheRequest>();
+            var value = await _cache.GetCacheAsync<NewCacheRequest>(key);
+            response.Success = true;
+            response.Data = value;
+            return Ok(response);
+        }
+
+        [HttpPost("cache")]
+        public async Task<IActionResult> SetCacheValueExtensions([FromBody] NewCacheRequest request)
+        {
+            var response = new BaseResponse<NewCacheRequest>();
+            await _cache.SetCacheAsync(request.Key, request);
+            response.Success = true;
+            response.Data = request;
+            return Ok(response);
+        }
     }
 }

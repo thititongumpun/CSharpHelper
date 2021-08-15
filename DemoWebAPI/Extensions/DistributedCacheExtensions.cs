@@ -10,14 +10,14 @@ namespace DemoWebAPI.Extensions
     public static class DistributedCacheExtensions
     {
         public static async Task SetCacheAsync<T>(this IDistributedCache cache,
-            string record, T data, TimeSpan? absoluteExprieTime = null, TimeSpan? unusedExpireTime = null)
+            string key, T data, TimeSpan? absoluteExprieTime = null, TimeSpan? unusedExpireTime = null)
         {
             var options = new DistributedCacheEntryOptions();
             options.AbsoluteExpirationRelativeToNow = absoluteExprieTime ?? TimeSpan.FromSeconds(60);
             options.SlidingExpiration = unusedExpireTime;
 
             var jsonData = JsonSerializer.Serialize(data);
-            await cache.SetStringAsync(record, jsonData, options);
+            await cache.SetStringAsync(key, jsonData, options);
         }
 
         public static async Task<T> GetCacheAsync<T>(this IDistributedCache cache, string record)
