@@ -21,12 +21,9 @@ namespace UtilsCSharp
             // Console.WriteLine(person.GetFullName());
 
             // int result = ExampleGeneric.Larger<int>(3, 5);
+            
 
             // Console.WriteLine(result);
-            
-            Test.CalculateCool();
-
-            
         }
     }
 }

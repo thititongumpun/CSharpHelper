@@ -1,0 +1,17 @@
+{
+    "version": 1,
+    "variables": [{
+        "names": ["platformId", "channelReferenceId"],
+        "values": [
+            [2, "WEB_KERRY"],
+            [3, "MOBILE_KERRY"]
+        ]
+    },
+    {
+        "names": ["UserGUID", "text"],
+        "values": [
+            ["e5668e93-2dc3-41fc-8212-2033040b2cbc", "ขั้นตอนการสมัคร"],
+            ["02da1b0e-df94-4dbe-b946-820c72704716", "ยินดีต้อนรับ"]
+        ]
+    }]
+}

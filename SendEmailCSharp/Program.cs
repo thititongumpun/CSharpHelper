@@ -10,7 +10,7 @@ namespace SendEmailCSharp
         static void Main(string[] args)
         {
             // Execute().Wait();
-            Console.WriteLine(GetFullName());
+            // Console.WriteLine(GetFullName());
         }
 
         static string GetFullName()
@@ -23,8 +23,8 @@ namespace SendEmailCSharp
         {
             var apiKey = "apikey";
             var client = new SendGridClient(apiKey);
-            var from = new EmailAddress("thiti180536@gmail.com", "Not");
-            var to = new EmailAddress("thiti@dosetech.co", "Not");
+            var from = new EmailAddress("thiti@dosetech.co", "Not");
+            var to = new EmailAddress("thiti180536@gmail.com", "Not");
             var subject = "Sending with SendGrid";
             var plainTextContext = "and easy to do";
             var htmlContent = "<h1>Hello world</h1>";

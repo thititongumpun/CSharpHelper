@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "variables": [{
+    "names": ["Name","DisplayOrder","CreateDate"],
+    "values": [
+      ["wajajwjasjasj","5","3000-08-01"],
+      ["testing test api","4","4000-01-01"]
+    ]
+  }]
+}
