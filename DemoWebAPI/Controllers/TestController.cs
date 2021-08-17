@@ -14,11 +14,10 @@ namespace DemoWebAPI.Controllers
     [Route("api/[controller]")]
     public class TestController : Controller
     {
-        private readonly ICacheService _cacheService;
+        //private readonly ICacheService _cacheService;
         private readonly IDistributedCache _cache;
-        public TestController(ICacheService cacheService, IDistributedCache cache)
+        public TestController(IDistributedCache cache)
         {
-            _cacheService = cacheService;
             _cache = cache;
         }
 

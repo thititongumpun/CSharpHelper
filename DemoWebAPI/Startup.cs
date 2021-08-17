@@ -35,14 +35,24 @@ namespace DemoWebAPI
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DemoWebAPI", Version = "v1" });
             });
 
-            services.AddStackExchangeRedisCache(options =>
-            {
-                options.Configuration = Configuration.GetValue<string>("RedisConnection");
-                options.InstanceName = "DemoRedis";
-            });
-            services.AddSingleton<IConnectionMultiplexer>(x =>
-                ConnectionMultiplexer.Connect(Configuration.GetValue<string>("RedisConnection")));
-            services.AddSingleton<ICacheService, RedisCacheService>();
+            //services.AddStackExchangeRedisCache(options =>
+            //{
+            //    options.Configuration = Configuration.GetValue<string>("RedisConnection");
+            //    options.InstanceName = "DemoRedis";
+            //});
+            //services.AddSingleton<IConnectionMultiplexer>(x =>
+            //    ConnectionMultiplexer.Connect(Configuration.GetValue<string>("RedisConnection")));
+            //services.AddSingleton<ICacheService, RedisCacheService>();
+            //services.AddDistributedMemoryCache();
+
+            //services.AddEasyCaching(options =>
+            //{
+            //    options.UseMemcached(cfg =>
+            //    {
+            //        cfg.DBConfig.AddServer("localhost", 11211);
+            //    });
+            //});
+            services.AddEnyimMemcached();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +64,8 @@ namespace DemoWebAPI
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DemoWebAPI v1"));
             }
+
+            app.UseEnyimMemcached();
 
             app.UseHttpsRedirection();
 
