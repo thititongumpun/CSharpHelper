@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using UtilsCSharp.Generic;
 
 namespace UtilsCSharp
@@ -24,6 +25,13 @@ namespace UtilsCSharp
             
 
             // Console.WriteLine(result);
+            StringBuilder sb = new StringBuilder();
+            string text = "Your Welcome";
+            int tierId = 1;
+            int platformId = 2;
+
+            sb.Append(text).Append('/').Append(tierId).Append('/').Append(platformId);
+            Console.WriteLine(sb.ToString());
         }
     }
 }
