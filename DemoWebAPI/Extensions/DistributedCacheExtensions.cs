@@ -12,6 +12,7 @@ namespace DemoWebAPI.Extensions
         public static async Task SetCacheAsync<T>(this IDistributedCache cache,
             string key, T data, TimeSpan? absoluteExprieTime = null, TimeSpan? unusedExpireTime = null)
         {
+
             var options = new DistributedCacheEntryOptions();
             options.AbsoluteExpirationRelativeToNow = absoluteExprieTime ?? TimeSpan.FromSeconds(60);
             options.SlidingExpiration = unusedExpireTime;
