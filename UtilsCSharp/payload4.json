@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "variables": [{
+    "names": ["platformId", "channelReferenceId", "UserGUID", "text"],
+    "values": [
+      [2, "WEB_KERRY", "0870aad6-53d7-4cbd-a9ca-d81f54838aa0", "ติดต่อเจ้าหน้าที่"],
+      [2, "WEB_KERRY", "0b372655-dc2b-4564-aa65-57c57dd1423c", "ติดต่อแอดมิน"],
+      [3, "MOBILE_KERRY", "068f6ddc-96b9-4f3e-885a-6998bb670142", "ติดต่อเจ้าหน้าที่"],
+      [3, "MOBILE_KERRY", "0814662a-5c10-43bc-a733-8a7c49f9fdeb", "ติดต่อแอดมิน"]
+    ]
+  }]
+}
