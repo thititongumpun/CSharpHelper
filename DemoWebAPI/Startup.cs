@@ -52,7 +52,9 @@ namespace DemoWebAPI
             //        cfg.DBConfig.AddServer("localhost", 11211);
             //    });
             //});
-            services.AddEnyimMemcached();
+            //services.AddEnyimMemcached();
+
+            services.AddSingleton<IMessageService, MessageService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,7 +67,7 @@ namespace DemoWebAPI
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DemoWebAPI v1"));
             }
 
-            app.UseEnyimMemcached();
+            //app.UseEnyimMemcached();
 
             app.UseHttpsRedirection();
 

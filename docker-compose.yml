@@ -1,0 +1,27 @@
+version: '3.6'
+services:
+  rabbitmq:
+    container_name: rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=password
+    image: rabbitmq:3-management
+
+  demowebapi:
+    build: 
+      context: ./DemoWebAPI
+      dockerfile: Dockerfile
+    restart: on-failure
+    depends_on:
+      - rabbitmq
+
+  workerclient:
+    build:
+      context: ./Worker.Client
+      dockerfile: Dockerfile
+    restart: on-failure
+    depends_on:
+      - rabbitmq
