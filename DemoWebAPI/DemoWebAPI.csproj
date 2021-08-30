@@ -7,6 +7,8 @@
   <ItemGroup>
     <PackageReference Include="EasyCaching.Memcached" Version="1.4.0" />
     <PackageReference Include="EnyimMemcachedCore" Version="2.5.3" />
+    <PackageReference Include="Hangfire" Version="1.7.25" />
+    <PackageReference Include="Hangfire.Storage.SQLite" Version="0.3.0" />
     <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="5.0.1" />
     <PackageReference Include="RabbitMQ.Client" Version="6.2.2" />
     <PackageReference Include="StackExchange.Redis" Version="2.2.62" />

@@ -1,4 +1,6 @@
 using DemoWebAPI.Services;
+using Hangfire;
+using Hangfire.Storage.SQLite;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -55,10 +57,20 @@ namespace DemoWebAPI
             //services.AddEnyimMemcached();
 
             services.AddSingleton<IMessageService, MessageService>();
+
+          
+            services.AddHangfire(config =>
+                        config.UseSimpleAssemblyNameTypeSerializer()
+                              .UseRecommendedSerializerSettings()
+                              .UseSQLiteStorage("D:/Helper/CSharpHelper/DemoWebAPI/db/Hangfire.db"));
+
+            services.AddHangfireServer();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IRecurringJobManager recurringJobManager)
         {
             if (env.IsDevelopment())
             {
@@ -79,6 +91,14 @@ namespace DemoWebAPI
             {
                 endpoints.MapControllers();
             });
+
+            app.UseHangfireDashboard("/jobs");
+
+            recurringJobManager.AddOrUpdate(
+                "CRON RUN EVERY MINUTES",
+                () => Console.WriteLine("Hello 123"),
+                "* * * * *"
+                );
         }
     }
 }
