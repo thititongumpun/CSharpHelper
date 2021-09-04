@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -25,13 +26,25 @@ namespace UtilsCSharp
             
 
             // Console.WriteLine(result);
-            StringBuilder sb = new StringBuilder();
-            string text = "Your Welcome";
-            int tierId = 1;
-            int platformId = 2;
+            // StringBuilder sb = new StringBuilder();
+            // string text = "Your Welcome";
+            // int tierId = 1;
+            // int platformId = 2;
 
-            sb.Append(text).Append('/').Append(tierId).Append('/').Append(platformId);
-            Console.WriteLine(sb.ToString());
+            // sb.Append(text).Append('/').Append(tierId).Append('/').Append(platformId);
+            // Console.WriteLine(sb.ToString());
+
+            var stopwatch = new Stopwatch();
+
+            stopwatch.Start();
+            for (int i = 0; i < 500; i++)
+            {
+                Console.WriteLine(i);
+            }
+            stopwatch.Stop();
+
+            var elapsed = stopwatch.ElapsedMilliseconds;
+            Console.WriteLine(elapsed);
         }
     }
 }
