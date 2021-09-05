@@ -34,17 +34,24 @@ namespace UtilsCSharp
             // sb.Append(text).Append('/').Append(tierId).Append('/').Append(platformId);
             // Console.WriteLine(sb.ToString());
 
-            var stopwatch = new Stopwatch();
+            // var stopwatch = new Stopwatch();
 
-            stopwatch.Start();
-            for (int i = 0; i < 500; i++)
-            {
-                Console.WriteLine(i);
-            }
-            stopwatch.Stop();
+            // stopwatch.Start();
+            // for (int i = 0; i < 500; i++)
+            // {
+            //     Console.WriteLine(i);
+            // }
+            // stopwatch.Stop();
 
-            var elapsed = stopwatch.ElapsedMilliseconds;
-            Console.WriteLine(elapsed);
+            // var elapsed = stopwatch.ElapsedMilliseconds;
+            // Console.WriteLine(elapsed);
+            Console.WriteLine(CalculateTax(10000, out double total));
+            Console.WriteLine(total);
+        }
+
+        private static double CalculateTax(double val, out double total)
+        {
+            return total = Math.Round(val * 0.7);
         }
     }
 }
