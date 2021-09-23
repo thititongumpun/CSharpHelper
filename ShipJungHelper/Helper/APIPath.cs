@@ -16,6 +16,5 @@ namespace ShipJungHelper.Helper
         public const string GetLabelAPI = "/api/v1/orders/generate-awb-label/";
         public const string AddPickupAPI = "/api/v1/sellers/addresses/";
         public const string ShipjungDomain = "/api/v1/courier/pricing/create_order";
-
     }
 }
