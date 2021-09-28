@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LineNoti", "LineNoti\LineNo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuessGame", "GuessGame\GuessGame.csproj", "{BB6F50C4-A9E4-45E3-BCD3-F8ACABE6B67E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilsTest", "UtilsTest\UtilsTest.csproj", "{2AE7B2F2-8FF3-4A79-8957-3D18F2F4E512}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +155,18 @@ Global
 		{BB6F50C4-A9E4-45E3-BCD3-F8ACABE6B67E}.Release|x64.Build.0 = Release|Any CPU
 		{BB6F50C4-A9E4-45E3-BCD3-F8ACABE6B67E}.Release|x86.ActiveCfg = Release|Any CPU
 		{BB6F50C4-A9E4-45E3-BCD3-F8ACABE6B67E}.Release|x86.Build.0 = Release|Any CPU
+		{2AE7B2F2-8FF3-4A79-8957-3D18F2F4E512}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AE7B2F2-8FF3-4A79-8957-3D18F2F4E512}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AE7B2F2-8FF3-4A79-8957-3D18F2F4E512}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2AE7B2F2-8FF3-4A79-8957-3D18F2F4E512}.Debug|x64.Build.0 = Debug|Any CPU
+		{2AE7B2F2-8FF3-4A79-8957-3D18F2F4E512}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2AE7B2F2-8FF3-4A79-8957-3D18F2F4E512}.Debug|x86.Build.0 = Debug|Any CPU
+		{2AE7B2F2-8FF3-4A79-8957-3D18F2F4E512}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AE7B2F2-8FF3-4A79-8957-3D18F2F4E512}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AE7B2F2-8FF3-4A79-8957-3D18F2F4E512}.Release|x64.ActiveCfg = Release|Any CPU
+		{2AE7B2F2-8FF3-4A79-8957-3D18F2F4E512}.Release|x64.Build.0 = Release|Any CPU
+		{2AE7B2F2-8FF3-4A79-8957-3D18F2F4E512}.Release|x86.ActiveCfg = Release|Any CPU
+		{2AE7B2F2-8FF3-4A79-8957-3D18F2F4E512}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

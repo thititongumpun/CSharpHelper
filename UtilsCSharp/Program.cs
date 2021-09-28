@@ -12,41 +12,12 @@ namespace UtilsCSharp
     {
         static void Main(string[] args)
         {
-
-            // Person person = new Person();
-            // person.Name = "eiei";
-            // person.Age = 28;
-            // string res = StingHelper.ConvertToString(person);
-
-            // Console.WriteLine(person);
-
-            // Console.WriteLine(person.GetFullName());
-
-            // int result = ExampleGeneric.Larger<int>(3, 5);
-            
-
-            // Console.WriteLine(result);
-            // StringBuilder sb = new StringBuilder();
-            // string text = "Your Welcome";
-            // int tierId = 1;
-            // int platformId = 2;
-
-            // sb.Append(text).Append('/').Append(tierId).Append('/').Append(platformId);
-            // Console.WriteLine(sb.ToString());
-
-            // var stopwatch = new Stopwatch();
-
-            // stopwatch.Start();
-            // for (int i = 0; i < 500; i++)
-            // {
-            //     Console.WriteLine(i);
-            // }
-            // stopwatch.Stop();
-
-            // var elapsed = stopwatch.ElapsedMilliseconds;
-            // Console.WriteLine(elapsed);
-            Console.WriteLine(CalculateTax(10000, out double total));
-            Console.WriteLine(total);
+            DateTime dt1 = DateTime.Now;
+            DateTime dt2 = new DateTime(2021, 1, 8, 18, 6, 0 );
+            TimeSpan ts = dt1 - dt2;
+            Console.WriteLine(dt1);
+            Console.WriteLine(dt2);
+            Console.WriteLine("No. of Minutes (Difference) = {0}", Math.Ceiling(ts.TotalMinutes));
         }
 
         private static double CalculateTax(double val, out double total)
