@@ -12,11 +12,15 @@ namespace UtilsCSharp
     {
         static void Main(string[] args)
         {
-            DateTime dt1 = DateTime.Now;
-            DateTime dt2 = new DateTime(2021, 1, 8, 18, 6, 0 );
-            TimeSpan ts = dt1 - dt2;
-            Console.WriteLine(dt1);
-            Console.WriteLine(dt2);
+            // 0
+            // 4321
+            // 5760
+            DateTime paymentDate = new DateTime(2021, 01, 19, 00, 58, 00 );
+            DateTime createDate =  new DateTime(2021, 01, 15, 15, 59, 53 );
+            TimeSpan ts = paymentDate.Subtract(createDate);
+            // Console.WriteLine(dt1);
+            // Console.WriteLine(dt2);
+            Console.WriteLine(Math.Ceiling(ts.TotalMinutes));
             Console.WriteLine("No. of Minutes (Difference) = {0}", Math.Ceiling(ts.TotalMinutes));
         }
 
