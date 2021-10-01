@@ -21,6 +21,7 @@
 //                     //query.Where($"CustomerId = {customerId}");
 //                     query.Where($"co.CustomerId > 1");
 //                     query.Where($"c.Age = 55");
+                        query.AppendLine($"");
 //                     var res = query.Query<Customer>();
 //                     return res;
 //                 }
