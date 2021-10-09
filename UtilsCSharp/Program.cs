@@ -22,11 +22,18 @@ namespace UtilsCSharp
             // Console.WriteLine(dt2);
             Console.WriteLine(Math.Ceiling(ts.TotalMinutes));
             Console.WriteLine("No. of Minutes (Difference) = {0}", Math.Ceiling(ts.TotalMinutes));
+            Console.WriteLine(DateTime.Now);
+
         }
 
         private static double CalculateTax(double val, out double total)
         {
             return total = Math.Round(val * 0.7);
+        }
+
+        private static string GetFullName(string f, string l)
+        {
+            return $"{f} {l}";
         }
     }
 }
