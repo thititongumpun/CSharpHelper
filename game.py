@@ -1,13 +1,10 @@
 class Person:
-  # def __init__(self):
-  firstName = "haha"
-  lastName = "eiei"
-  def getName(self, firstName, lastName):
-    return firstName + lastName
+  def __init__(self, firstName, lastName):
+    self.firstName = firstName
+    self.lastName = lastName
 
-print(Person().getName("haha", "eiei"))
+  def getName(self):
+    return "{} {}".format(self.firstName, self.lastName)
 
-a = Person()
-a.firstName = "test"
-a.lastName = "zaza"
-print(a.firstName)
+a = Person("test", "zaza")
+print(a.getName())
