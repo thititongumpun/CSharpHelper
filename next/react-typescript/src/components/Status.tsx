@@ -1,5 +1,5 @@
 interface IStatusProps {
-  status: string
+  status: 'loading' | 'success' | 'error'
 }
 
 export const Status = ({status} : IStatusProps) => {
@@ -10,8 +10,6 @@ export const Status = ({status} : IStatusProps) => {
   return (
     <div>
       <h2>{message}</h2>
-      <h2>Data fetched successfully</h2>
-      <h2>Error fetching Data</h2>
     </div>
   )
 }
