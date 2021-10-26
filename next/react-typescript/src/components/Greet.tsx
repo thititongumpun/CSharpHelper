@@ -9,7 +9,7 @@ export const Greet = ({name, messageCount, isLoggedIn} : IProps) => {
     <div>
       <h2>
         {
-        {isLoggedIn} ? `Welcome ${name}! You have ${messageCount} unread messages` 
+        {isLoggedIn} ? `Welcome ${name}! You have ${messageCount || 0} unread messages` 
           : 'Welcome Guest'
         }                                                                                                                                                                                                                                             
       </h2>
