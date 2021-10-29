@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import {BiRestaurant} from 'react-icons/bi';
 import {Container} from '../GlobalStyles';
+import {ImAirplane} from 'react-icons/im';
 
 export const Nav = styled.nav` 
 font-size: 18px;
@@ -41,7 +41,7 @@ transition: all .5s ease;
 }
 `;
 
-export const NavIcon = styled(BiRestaurant)`
+export const NavIcon = styled(ImAirplane)`
 margin-right: .8rem;
 transition: all .5s ease;
 &:hover {

@@ -17,77 +17,77 @@ import
 } from './Navbar.styles';
 
 export const Navbar = () => {
-  const [click, setClick] = useState(false);
-  const [button, setButton] = useState(true);
-  const handleClick = () => setClick(!click);
-  const closeMenu = () => setClick(false);
+    const [click, setClick] = useState(false);
+    const [button, setButton] = useState(true);
+    const handleClick = () => setClick(!click);
+    const closeMenu = () => setClick(false);
 
-  const showButton = () =>{
-      if(window.innerWidth<= 1000){
-          setButton(false);
-      }else{
-          setButton(true);
-      }
-  }
+    const showButton = () =>{
+        if(window.innerWidth<= 1000){
+            setButton(false);
+        }else{
+            setButton(true);
+        }
+    }
 
-  useEffect(() => {
-      showButton();
-  }, []);
-  window.addEventListener('resize', showButton);
-  
-  return (
-      <div>
-          <IconContext.Provider value={{ color: '#fff'}}>
-              <Nav>
-                  <NavbarContainer>
-                      <NavLogo to="/">
-                          <NavIcon/>
-                          <h4>Thai Amadeus</h4>
-                      </NavLogo>
-                      <MenuIcon onClick={handleClick}>
-                          {click ? <BiX/> : <BiMenu/>}
-                      </MenuIcon>
+    useEffect(() => {
+        showButton();
+    }, []);
+    window.addEventListener('resize', showButton);
+    
+    return (
+        <div>
+            <IconContext.Provider value={{ color: '#fff'}}>
+                <Nav>
+                    <NavbarContainer>
+                        <NavLogo to="/">
+                            <NavIcon/>
+                            <h4>Thai Amadeus</h4>
+                        </NavLogo>
+                        <MenuIcon onClick={handleClick}>
+                            {click ? <BiX/> : <BiMenu/>}
+                        </MenuIcon>
 
-                      <Menu onClick={handleClick} click={click}>
-                          <MenuItem>
-                              <MenuLink onClick={closeMenu} to="/">Home</MenuLink>
-                          </MenuItem>
-                          <MenuItem>
-                              <MenuLink onClick={closeMenu} to="/about">News</MenuLink>
-                          </MenuItem>
-                          <MenuItem>
-                              <MenuLink onClick={closeMenu} to="/recipe">Helpdesk</MenuLink>
-                          </MenuItem>
-                          <MenuItem>
-                              <MenuLink onClick={closeMenu} to="/recipe">Training</MenuLink>
-                          </MenuItem>
-                          <MenuItem>
-                              <MenuLink onClick={closeMenu} to="/recipe">Technical Support</MenuLink>
-                          </MenuItem>
-                          <MenuItem>
-                              <MenuLink onClick={closeMenu} to="/recipe">Careers</MenuLink>
-                          </MenuItem>
-                          <MenuItem>
-                              <MenuLink onClick={closeMenu} to="/recipe">Contact us</MenuLink>
-                          </MenuItem>
-                          {/* <MenuItemBtn>
-                              {button?(
-                                  <MenuLinkBtn to="/order-now">
-                                      <Button primary>Order Now</Button>
-                                  </MenuLinkBtn>
-                              ): (
-                                  <MenuLinkBtn to="/order-now">
-                                      <Button primary bigFont onClick={closeMenu}>Order Now</Button>
-                                  </MenuLinkBtn>
-                              )
-                              }
-                          </MenuItemBtn> */}
-                      </Menu>
+                        <Menu onClick={handleClick} click={click}>
+                            <MenuItem>
+                                <MenuLink onClick={closeMenu} to="/">Home</MenuLink>
+                            </MenuItem>
+                            <MenuItem>
+                                <MenuLink onClick={closeMenu} to="/about">News</MenuLink>
+                            </MenuItem>
+                            <MenuItem>
+                                <MenuLink onClick={closeMenu} to="/recipe">Helpdesk</MenuLink>
+                            </MenuItem>
+                            <MenuItem>
+                                <MenuLink onClick={closeMenu} to="/recipe">Training</MenuLink>
+                            </MenuItem>
+                            <MenuItem>
+                                <MenuLink onClick={closeMenu} to="/recipe">Technical Support</MenuLink>
+                            </MenuItem>
+                            <MenuItem>
+                                <MenuLink onClick={closeMenu} to="/recipe">Careers</MenuLink>
+                            </MenuItem>
+                            <MenuItem>
+                                <MenuLink onClick={closeMenu} to="/recipe">Contact us</MenuLink>
+                            </MenuItem>
+                            {/* <MenuItemBtn>
+                                {button?(
+                                    <MenuLinkBtn to="/order-now">
+                                        <Button primary>Order Now</Button>
+                                    </MenuLinkBtn>
+                                ): (
+                                    <MenuLinkBtn to="/order-now">
+                                        <Button primary bigFont onClick={closeMenu}>Order Now</Button>
+                                    </MenuLinkBtn>
+                                )
+                                }
+                            </MenuItemBtn> */}
+                        </Menu>
 
-                  </NavbarContainer>
+                    </NavbarContainer>
 
-              </Nav>
-          </IconContext.Provider>
-      </div>
-  )
+                </Nav>
+            </IconContext.Provider>
+        </div>
+    )
 }
