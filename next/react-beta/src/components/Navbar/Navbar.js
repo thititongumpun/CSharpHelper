@@ -53,7 +53,7 @@ export const Navbar = () => {
                                 <MenuLink onClick={closeMenu} to="/">Home</MenuLink>
                             </MenuItem>
                             <MenuItem>
-                                <MenuLink onClick={closeMenu} to="/about">News</MenuLink>
+                                <MenuLink onClick={closeMenu} to="/newandevent">News</MenuLink>
                             </MenuItem>
                             <MenuItem>
                                 <MenuLink onClick={closeMenu} to="/recipe">Helpdesk</MenuLink>
