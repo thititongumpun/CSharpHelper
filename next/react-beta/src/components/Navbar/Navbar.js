@@ -1,7 +1,6 @@
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import { BiMenu, BiX } from "react-icons/bi";
 import { IconContext } from "react-icons";
-import {Button} from '../GlobalStyles';
 import 
 {
     Nav,
@@ -11,29 +10,13 @@ import
     MenuIcon,
     Menu,
     MenuItem,
-    MenuLink,
-    MenuItemBtn,
-    MenuLinkBtn,
+    MenuLink
 } from './Navbar.styles';
 
 export const Navbar = () => {
     const [click, setClick] = useState(false);
-    const [button, setButton] = useState(true);
     const handleClick = () => setClick(!click);
     const closeMenu = () => setClick(false);
-
-    const showButton = () =>{
-        if(window.innerWidth<= 1000){
-            setButton(false);
-        }else{
-            setButton(true);
-        }
-    }
-
-    useEffect(() => {
-        showButton();
-    }, []);
-    window.addEventListener('resize', showButton);
     
     return (
         <div>
@@ -68,20 +51,8 @@ export const Navbar = () => {
                                 <MenuLink onClick={closeMenu} to="/recipe">Careers</MenuLink>
                             </MenuItem>
                             <MenuItem>
-                                <MenuLink onClick={closeMenu} to="/recipe">Contact us</MenuLink>
+                                <MenuLink onClick={closeMenu} to="/contactus">Contact Us</MenuLink>
                             </MenuItem>
-                            {/* <MenuItemBtn>
-                                {button?(
-                                    <MenuLinkBtn to="/order-now">
-                                        <Button primary>Order Now</Button>
-                                    </MenuLinkBtn>
-                                ): (
-                                    <MenuLinkBtn to="/order-now">
-                                        <Button primary bigFont onClick={closeMenu}>Order Now</Button>
-                                    </MenuLinkBtn>
-                                )
-                                }
-                            </MenuItemBtn> */}
                         </Menu>
 
                     </NavbarContainer>

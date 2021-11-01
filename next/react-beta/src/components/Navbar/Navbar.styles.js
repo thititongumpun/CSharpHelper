@@ -8,7 +8,7 @@ font-size: 18px;
 position: sticky;
 top: 0;
 z-index: 999;
-height: 80px;
+height: 50px;
 background-color: rgba(0, 0, 0, 0.5);
 box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
 display: flex;
@@ -19,10 +19,9 @@ align-items: center;
 
 export const NavbarContainer = styled(Container)`
 display: flex;
-/* justify-content: space-between; */
 justify-content: center;
 align-items: center;
-height: 80px;
+height: 50px;
 background-color: #0071ce;
 ${Container};
 `;
