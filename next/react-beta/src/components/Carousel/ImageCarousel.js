@@ -1,5 +1,5 @@
-import { Carousel } from 'react-carousel-minimal';
-import {data, captionStyle, slideNumberStyle} from './data';
+import { Carousel } from "react-carousel-minimal";
+import { data, captionStyle, slideNumberStyle } from "./data";
 
 export const ImageCarousel = () => {
   return (
@@ -31,4 +31,4 @@ export const ImageCarousel = () => {
       />
     </>
   );
-}
+};
