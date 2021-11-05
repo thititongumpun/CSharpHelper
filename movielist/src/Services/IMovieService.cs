@@ -9,5 +9,6 @@ namespace imdbx.Services
     {
         Task<IEnumerable<Movies>> GetMoviesList();
         Task<Movies> GetMoviesByGuid(Guid id);
+        Task AddMovie(Movies movies);
     }
 }

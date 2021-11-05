@@ -24,5 +24,11 @@ namespace imdbx.Services
         {
             return await _context.Movies.ToListAsync();
         }
+
+        public async Task AddMovie(Movies movies)
+        {
+            await _context.Movies.AddAsync(movies);
+            await _context.SaveChangesAsync();
+        }
     }
 }

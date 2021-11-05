@@ -36,8 +36,17 @@ namespace imdbx
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "imdbx", Version = "v1" });
             });
 
-            services.AddDbContext<AppDbContext>
+            
+            if (Configuration.GetValue<bool>("UseInMemory"))
+            {
+                services.AddDbContext<AppDbContext>
+                    (x => x.UseInMemoryDatabase("InMemoryDB"));
+            }
+            else 
+            {
+                services.AddDbContext<AppDbContext>
                     (x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            }
 
             services.AddTransient<IMovieService, MovieService>();
         }

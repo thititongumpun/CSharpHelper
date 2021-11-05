@@ -1,29 +1,34 @@
-//using imdbx.Controllers;
-//using imdbx.Services;
-//using Moq;
-//using System;
-//using Xunit;
+using imdbx;
+using imdbx.Controllers;
+using imdbx.Services;
+using Microsoft.AspNetCore.Mvc;
+using Moq;
+using System;
+using Xunit;
 
-//namespace imdbxTests
-//{
-//    public class MoviesTest
-//    {
-//        public Mock<IMovieService> mock = new Mock<IMovieService>();
+namespace imdbxTests
+{
+  public class MoviesTest
+  {
+    [Fact]
+    public void mockSomething()
+    {
+      var mock = new Movies()
+      {
+        Id = Guid.NewGuid(),
+        Name = "John Wick",
+        Rating = 8.5,
+        MovieType = MovieType.Action
+      };
 
-//        [Fact]
-//        public async void GetMoviesList()
-//        {
-//            Guid guid = new Guid("efee5b91-5fb4-471f-bf4a-09013e37fcde");
-//            mock.Setup(m => m.GetMoviesList()).Returns();
-//            MovieListController movie = new MovieListController(mock.Object);
-//            object result = await movie.Index();
-//            Assert.Equal("")
-//        }
+      var mockService = new Mock<IMovieService>();
+      mockService.Setup(repo => repo.AddMovie(It.IsAny<Movies>()));
+      var controller = new MovieListController(mockService.Object);
 
-//        [Fact]
-//        public async void mockSomething()
-//        {
+      var actionResult = controller.AddMovie(mock);
 
-//        }
-//    }
-//}
+      var result = actionResult.Result;
+      Assert.IsType<OkObjectResult>(result);
+    }
+  }
+}

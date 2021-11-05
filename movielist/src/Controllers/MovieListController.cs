@@ -20,6 +20,7 @@ namespace imdbx.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
+
             return Ok(await _movieService.GetMoviesList());
         }
 
@@ -30,15 +31,9 @@ namespace imdbx.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post()
+        public async Task<IActionResult> AddMovie([FromBody] Movies movies)
         {
-            Movies movies = new Movies()
-            {
-                Id = Guid.NewGuid(),
-                Name = "John Wick",
-                Rating = 9.8,
-                MovieType = MovieType.Action
-            };
+            await _movieService.AddMovie(movies);
             return Ok(movies);
         }
     }
